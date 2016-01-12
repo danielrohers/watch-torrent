@@ -1,0 +1,29 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+button {
+  width: 100%;
+}
+
+.video-embed {
+  background-color: #000000;
+  margin-top: 5em;
+}
+
+.video-embed .video-js {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.video-embed .video-js .vjs-big-play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

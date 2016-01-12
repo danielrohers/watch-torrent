@@ -1,0 +1,29 @@
+extends layout
+
+block head
+  link(rel='stylesheet' href='//vjs.zencdn.net/5.4.6/video-js.css')
+  script(src='//vjs.zencdn.net/ie8/1.1.1/videojs-ie8.min.js')
+
+block defer
+  script(src='//vjs.zencdn.net/5.4.6/video.js')
+  script(src='/js/main.js')
+
+block content
+  h1.text-center= title
+
+  .row
+    form(action='/stream' method='POST')
+      .col-md-6.col-md-offset-2.col-xs-12
+        .form-group
+          input.form-control(type='text' name='file' placeholder='magnet or torrent' required)
+      .col-xs-12.col-md-2
+        button.btn.btn-success(type='submit') Find
+
+  .row.video-embed
+    video#video.video-js(controls='' preload='none' width=640 height=264 data-setup={})
+      source(src="/stream?" type='video/mp4')
+      source(src="/stream?" type='video/webm')
+      source(src="/stream?" type='video/ogg')
+      p.vjs-no-js
+        |To view this video please enable JavaScript, and consider upgrading to a web browser that
+        a(href='http://videojs.com/html5-video-support/' target='_blank') supports HTML5 video
