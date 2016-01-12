@@ -27,3 +27,10 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@media (min-width: 992px) {
+  .video-js {
+    width: 640px;
+    height: 264px;
+  }
+}
